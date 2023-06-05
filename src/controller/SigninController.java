@@ -21,7 +21,7 @@ public class SigninController {
 	private ComponentEffect componentEffect = new ComponentEffect();
 	private final String customerFormPath = "/fxml/signin_customer.fxml";
 	private final String mechanicFormPath = "/fxml/signin_mechanic.fxml";
-
+	
 	
 	private void loadCustomerForm() throws IOException {
 		root = FXMLLoader.load(getClass().getResource(customerFormPath));

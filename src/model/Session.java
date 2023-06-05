@@ -1,5 +1,6 @@
 package model;
 
-public class Session {
+import java.security.KeyStore.PrivateKeyEntry;
 
+public class Session {
 }
