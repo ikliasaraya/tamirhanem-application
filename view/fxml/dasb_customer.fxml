@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #B2C8DF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashCustomerController">
+   <children>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="150.0" spacing="30.0" style="-fx-background-color: #6E85B7;">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/tamirhanem_logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="37.0" prefWidth="123.0" text="tamirhanem" textFill="#faf8f6">
+                           <font>
+                              <Font name="Impact" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="dashKisiselBtn" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#dashKisiselBtnClick" onMouseEntered="#dashKisiselBtnEnter" onMouseExited="#dashKisiselBtnExit" prefHeight="90.0" prefWidth="150.0" style="-fx-background-color: #6E85B7;" text="Kişisel" textFill="#faf8f6">
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="26.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="dashAraclarBtn" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#dashAraclarBtnClick" onMouseEntered="#dashAraclarBtnEnter" onMouseExited="#dashAraclarBtnExit" prefHeight="90.0" prefWidth="150.0" style="-fx-background-color: #6E85B7;" text="Araçlar" textFill="#faf8f6">
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="26.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="dashRandevuBtn" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#dashRandevuBtnClick" onMouseEntered="#dashRandevuBtnEnter" onMouseExited="#dashRandevuBtnExit" prefHeight="90.0" prefWidth="150.0" style="-fx-background-color: #6E85B7;" text="Randevu" textFill="#faf8f6">
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="26.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <BorderPane fx:id="customerBp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0">
+               <center>
+                  <TabPane fx:id="dashPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #B2C8DF;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <tabs>
+                      <Tab text="Kişisel Bilgiler">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="544.0" prefWidth="304.0" spacing="10.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="74.0" prefWidth="255.0" spacing="5.0">
+                                             <children>
+                                                <Label text="AD" textFill="#faf8f6">
+                                                   <font>
+                                                      <Font name="Trebuchet MS Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="adTxt" editable="false" style="-fx-background-color: #FAF8F6; -fx-background-radius: 5;">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="74.0" prefWidth="255.0" spacing="5.0">
+                                             <children>
+                                                <Label text="SOYAD" textFill="#faf8f6">
+                                                   <font>
+                                                      <Font name="Trebuchet MS Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="soyadTxt" editable="false" style="-fx-background-color: #FAF8F6; -fx-background-radius: 5;">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="74.0" prefWidth="255.0" spacing="5.0">
+                                             <children>
+                                                <Label text="TELEFON NUMARASI" textFill="#faf8f6">
+                                                   <font>
+                                                      <Font name="Trebuchet MS Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="telTxt" editable="false" style="-fx-background-color: #FAF8F6; -fx-background-radius: 5;">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="74.0" prefWidth="255.0" spacing="5.0">
+                                             <children>
+                                                <Label text="E-POSTA" textFill="#faf8f6">
+                                                   <font>
+                                                      <Font name="Trebuchet MS Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="epostaTxt" editable="false" style="-fx-background-color: #FAF8F6; -fx-background-radius: 5;">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="74.0" prefWidth="255.0" spacing="5.0">
+                                             <children>
+                                                <Label text="ŞEHİR" textFill="#faf8f6">
+                                                   <font>
+                                                      <Font name="Trebuchet MS Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="sehirCombo" prefHeight="29.0" prefWidth="176.0" style="-fx-background-color: #FAF8F6; -fx-background-radius: 10;" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="74.0" prefWidth="255.0" spacing="5.0">
+                                             <children>
+                                                <Label text="İLÇE" textFill="#faf8f6">
+                                                   <font>
+                                                      <Font name="Trebuchet MS Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="ilceCombo" prefHeight="29.0" prefWidth="176.0" style="-fx-background-color: #FAF8F6; -fx-background-radius: 10;" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                    <CheckBox fx:id="editChk" alignment="CENTER" layoutX="532.0" layoutY="14.0" mnemonicParsing="false" onAction="#editChkAction" prefHeight="47.0" prefWidth="204.0" style="-fx-background-color: #6E85B7; -fx-background-radius: 5;" text="DÜZENLEME MODU" textFill="#faf8f6">
+                                       <font>
+                                          <Font name="Trebuchet MS Bold" size="19.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <Button fx:id="kaydetBtn" alignment="CENTER" layoutX="611.0" layoutY="74.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#kaydetBtnClick" onMouseEntered="#kaydetBtnEnter" onMouseExited="#kaydetBtnExit" prefHeight="44.0" prefWidth="124.0" style="-fx-background-color: #146C94; -fx-background-radius: 10;" text="Kaydet" textFill="#faf8f6">
+                                       <font>
+                                          <Font name="Trebuchet MS Bold" size="23.0" />
+                                       </font>
+                                    </Button>
+                                    <VBox layoutX="375.0" layoutY="196.0" prefHeight="361.0" prefWidth="359.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="354.0" prefWidth="360.0" spacing="5.0">
+                                             <children>
+                                                <Label text="ADRES" textFill="#faf8f6">
+                                                   <font>
+                                                      <Font name="Trebuchet MS Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="adresTxt" prefHeight="232.0" prefWidth="360.0" style="-fx-background-color: #FAF8F6; -fx-background-radius: 15;" />
+                                             </children>
+                                          </VBox>
+                                       </children></VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </center>
+            </BorderPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

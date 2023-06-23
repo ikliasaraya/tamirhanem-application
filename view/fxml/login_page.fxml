@@ -124,7 +124,7 @@
                            <children>
                               <Label fx:id="alertLabel" alignment="CENTER" prefHeight="52.0" prefWidth="333.0" text="asdfasdfffffasdfsdfffffffffffffffffffffffffffffffffffff" textAlignment="CENTER" textFill="RED" wrapText="true">
                                  <font>
-                                    <Font name="Trebuchet MS" size="14.0" />
+                                    <Font name="Trebuchet MS" size="20.0" />
                                  </font>
                               </Label>
                               <Button fx:id="loginBtn" mnemonicParsing="false" onMouseClicked="#loginBtnClick" onMouseEntered="#loginBtnEnter" onMouseExited="#loginBtnExit" prefHeight="48.0" prefWidth="110.0" style="-fx-background-color: #6E85B7; -fx-background-radius: 15;" text="Giriş Yap" textFill="#faf8f6">

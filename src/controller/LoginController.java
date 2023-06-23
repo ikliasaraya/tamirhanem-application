@@ -2,9 +2,11 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 import helper.ComponentEffect;
+import helper.DbConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +20,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.Session;
 import javafx.scene.Node;
 
 public class LoginController {
@@ -26,6 +29,36 @@ public class LoginController {
 	Scene scene;
 	Stage stage;
 	ComponentEffect componentEffect = new ComponentEffect();
+	final String customerDash = "/fxml/dasb_customer.fxml";
+	final String mechanicDash = "/fxml/dasb_mechanic.fxml";
+	private Session login() throws SQLException {
+		int userId;
+		int userTypeId;
+        Session session = new Session();
+
+		Connection conn = DbConnection.getConnection();
+		String sql = "SELECT user_id, user_usertypeidfk FROM user WHERE user_username = ? AND user_password = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, usernameInput.getText());
+        statement.setString(2, passwordInput.getText());
+        ResultSet rs = statement.executeQuery();
+        
+        if(rs.next()) {
+            userId = rs.getInt("user_id");
+            userTypeId = rs.getInt("user_usertypeidfk");
+            session.setSessionUserIdFk(userId);
+            session.setSessionUserTypeIdFk(userTypeId);
+            session.addDbSession();
+    		System.out.println("login ile session eklendi");
+    		System.out.println(userId);
+    		
+        } else {
+        	alertLabel.setText("Kullanıcı adı veya şifre hatalı!");
+        }
+        
+        conn.close();
+        return session;
+	}
 
 
     @FXML
@@ -67,8 +100,23 @@ public class LoginController {
 
     
     @FXML
-    void loginBtnClick(MouseEvent event) {
-
+    void loginBtnClick(MouseEvent event) throws SQLException, IOException {
+    	Session session = login();
+    	if(session.getSessionUserTypeIdFk() == 3) {
+    		System.out.println("musteri paneli acildi");
+        	root = FXMLLoader.load(getClass().getResource(customerDash));
+        	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        	scene = new Scene(root);
+        	stage.setScene(scene);
+        	stage.show();
+    	} else if (session.getSessionUserTypeIdFk() == 2) {
+    		System.out.println("tamirci paneli acildi");
+        	root = FXMLLoader.load(getClass().getResource(mechanicDash));
+        	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        	scene = new Scene(root);
+        	stage.setScene(scene);
+        	stage.show();
+    	}
     }
     
     @FXML
@@ -106,7 +154,7 @@ public class LoginController {
 
     @FXML
     void passwordInputKeytype(KeyEvent event) {
-
+    	alertLabel.setText("");
     }
     
     @FXML
@@ -175,11 +223,12 @@ public class LoginController {
 
     @FXML
     void usernameInputKeytype(KeyEvent event) {
-
+    	alertLabel.setText("");
     }
 
     @FXML
     void initialize() {
+    	alertLabel.setText("");
     }
 
 }

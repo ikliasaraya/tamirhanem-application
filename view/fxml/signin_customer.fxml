@@ -34,7 +34,7 @@
                               </TextField>
                            </children>
                         </HBox>
-                        <Label fx:id="usernameAlert" alignment="CENTER" text="ALERT USERNAME" textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="usernameAlert" alignment="CENTER" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="Trebuchet MS Bold" size="12.0" />
                            </font>
@@ -60,7 +60,7 @@
                               </TextField>
                            </children>
                         </HBox>
-                        <Label fx:id="passwordAlert" alignment="CENTER" text="ALERT USERNAME" textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="passwordAlert" alignment="CENTER" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="Trebuchet MS Bold" size="12.0" />
                            </font>
@@ -86,7 +86,7 @@
                               </TextField>
                            </children>
                         </HBox>
-                        <Label fx:id="nameAlert" alignment="CENTER" text="ALERT USERNAME" textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="nameAlert" alignment="CENTER" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="Trebuchet MS Bold" size="12.0" />
                            </font>
@@ -112,7 +112,7 @@
                               </TextField>
                            </children>
                         </HBox>
-                        <Label fx:id="surnameAlert" alignment="CENTER" text="ALERT USERNAME" textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="surnameAlert" alignment="CENTER" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="Trebuchet MS Bold" size="12.0" />
                            </font>
@@ -138,7 +138,7 @@
                               </TextField>
                            </children>
                         </HBox>
-                        <Label fx:id="phoneAlert" alignment="CENTER" text="ALERT USERNAME" textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="phoneAlert" alignment="CENTER" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="Trebuchet MS Bold" size="12.0" />
                            </font>
@@ -168,7 +168,7 @@
                               </TextField>
                            </children>
                         </HBox>
-                        <Label fx:id="mailAlert" alignment="CENTER" text="ALERT USERNAME" textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="mailAlert" alignment="CENTER" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="Trebuchet MS Bold" size="12.0" />
                            </font>
@@ -190,7 +190,7 @@
                               <ComboBox fx:id="cityCombo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#cityComboAction" onMouseClicked="#cityComboClick" prefHeight="30.0" prefWidth="200.0" promptText="ŞEHİR" style="-fx-background-color: #FAF8F6; -fx-background-radius: 5;" />
                            </children>
                         </HBox>
-                        <Label fx:id="cityAlert" alignment="CENTER" text="ALERT USERNAME" textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="cityAlert" alignment="CENTER" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="Trebuchet MS Bold" size="12.0" />
                            </font>
@@ -209,7 +209,7 @@
                               <ComboBox fx:id="districtCombo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#districtComboAction" onMouseClicked="#districtComboClick" prefHeight="30.0" prefWidth="200.0" promptText="İLÇE" style="-fx-background-color: #FAF8F6; -fx-background-radius: 5;" />
                            </children>
                         </HBox>
-                        <Label fx:id="districtAlert" alignment="CENTER" text="ALERT USERNAME" textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="districtAlert" alignment="CENTER" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="Trebuchet MS Bold" size="12.0" />
                            </font>
@@ -236,7 +236,7 @@
                               <Font name="Trebuchet MS Bold" size="16.0" />
                            </font>
                         </Button>
-                        <Label fx:id="mainAlert" alignment="CENTER" prefHeight="27.0" prefWidth="210.0" text="Kayıt Başarılı" wrapText="true">
+                        <Label fx:id="mainAlert" alignment="CENTER" prefHeight="27.0" prefWidth="210.0" textFill="#fa0000" wrapText="true">
                            <font>
                               <Font name="Trebuchet MS Bold" size="15.0" />
                            </font>

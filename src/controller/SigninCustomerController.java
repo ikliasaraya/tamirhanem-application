@@ -25,7 +25,10 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import model.Customer;
+import model.User;
 
 public class SigninCustomerController {
 
@@ -34,6 +37,52 @@ public class SigninCustomerController {
 	Scene scene;
 	ComponentEffect ce = new ComponentEffect();
 
+	private void register() throws SQLException {
+		int cityId = 0;
+		int districtId = 0;
+		Connection conn = DbConnection.getConnection();
+		String sql = "SELECT city_id FROM city WHERE city_name = ?";
+		String sql2 = "SELECT district_id FROM district WHERE district_name = ?";
+		PreparedStatement st = conn.prepareStatement(sql);
+		PreparedStatement st2 = conn.prepareStatement(sql2);
+		st.setString(1, cityCombo.getSelectionModel().getSelectedItem());
+		st2.setString(1, districtCombo.getSelectionModel().getSelectedItem());
+		ResultSet rs = st.executeQuery();
+		ResultSet rs2 = st2.executeQuery();
+		while (rs.next() && rs2.next()) {
+			cityId = rs.getInt("city_id");
+			districtId = rs2.getInt("district_id");
+			System.out.println(cityId + districtId);
+
+		}
+
+		User user = new User();
+		Customer customer = new Customer();
+		user.setUsername(usernameInput.getText().trim());
+		user.setUserPassword(passwordInput.getText().trim());
+		user.setUserTypeFk(3);
+		user.addDbUser();
+		String sql3 = "SELECT user_id FROM user WHERE user_username = ?";
+		PreparedStatement st3 = conn.prepareStatement(sql3);
+		st3.setString(1, user.getUsername());
+		ResultSet rs3 = st3.executeQuery();
+		while (rs3.next()) {
+			user.setUserId(rs3.getInt("user_id"));
+			System.out.println(user.getUserId());
+		}
+		customer.setCustomerUserIdFk(user.getUserId());
+		customer.setCustomerUserTypeIfFk(user.getUserTypeFk());
+		customer.setCustomerName(nameInput.getText().trim());
+		customer.setCustomerSurname(surnameInput.getText().trim());
+		customer.setCustomerPhone(phoneInput.getText().trim());
+		customer.setCustomerCityIdFk(cityId);
+		customer.setCustomerDistrictIdFk(districtId);
+		customer.addDbCustomer();
+		
+		mainAlert.setText("Kayıt Başarılı!");
+		mainAlert.setTextFill(Color.GREEN);
+	}
+	
 	public void setCity() throws SQLException {
 		String query = "SELECT city.city_name FROM tamirhanemdb.city;";
 		Connection connection = DbConnection.getConnection();
@@ -251,8 +300,8 @@ public class SigninCustomerController {
 	}
 
 	@FXML
-	void signinBtnClick(MouseEvent event) {
-
+	void signinBtnClick(MouseEvent event) throws SQLException {
+		register();
 	}
 
 	@FXML

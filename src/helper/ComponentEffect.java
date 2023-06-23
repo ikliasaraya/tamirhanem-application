@@ -4,6 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 
 public class ComponentEffect {
@@ -38,6 +39,8 @@ public class ComponentEffect {
 		dropShadow.setColor(color);
 		button.setEffect(dropShadow);
 	}
+	
+
 	
 	public void removeButtonShadowEffect(Button button) {
 		DropShadow dropShadow = null;
